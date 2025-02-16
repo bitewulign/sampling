@@ -23,11 +23,10 @@ Underlying distribution: A fixed categorical distribution where 20% attend weddi
 Relevance to blog post: This step represents the real-world attendance of people at different social events.
 2. Infection Sampling
 Function used:
-python
-Copy
-Edit
+```python
 infected_indices = np.random.choice(ppl.index, size=int(len(ppl) * ATTACK_RATE), replace=False)
 ppl.loc[infected_indices, 'infected'] = True
+```
 Sampling procedure: A subset of the population is randomly selected as infected based on an attack rate (10%).
 Sample size: 10% of 1,000 = 100 individuals.
 Sampling frame: The full population of 1,000 attendees.
