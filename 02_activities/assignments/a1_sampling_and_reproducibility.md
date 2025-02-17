@@ -44,7 +44,7 @@ ppl.loc[ppl['infected'], 'traced'] = np.random.rand(sum(ppl['infected'])) < TRAC
 **Sample size:** Approximately `20% of 100 = 20` individuals.\
 **Sampling frame:** The subset of individuals marked as infected in the previous step.\
 **Underlying distribution:** Bernoulli distribution (each infected individual has a `20%` chance of being traced).\
-**Description:** For each infected individual, a random number is generated using np.random.rand. If the number is less than TRACE_SUCCESS (`0.20`), the individual is marked as traced. This simulates the probabilistic nature of primary contact tracing.\
+**Description:** For each infected individual, a random number is generated using np.random.rand. If the number is less than `TRACE_SUCCESS (0.20`), the individual is marked as traced. This simulates the probabilistic nature of primary contact tracing.\
 **Relevance to blog post:** Demonstrates that tracing does not detect all infections, only a random subset.
 
 ## 4. Secondary Contact Tracing Sampling
@@ -66,7 +66,7 @@ ppl.loc[ppl['event'].isin(events_traced) & ppl['infected'], 'traced'] = True
 **Sample Size:** `1000 (or 100)` iterations of the simulation.\
 **Sampling Frame:** Each iteration generates a new set of infections and tracing outcomes.\
 **Underlying Distribution:** The distributions of infections and tracing outcomes are determined by the previous sampling steps.\
-**Description:** The simulation is run 1000 (or 100) times to generate a distribution of outcomes. Each iteration involves the sampling procedures described `whitby_covid_tracing.py` before line `66`, and the results are aggregated into a DataFrame (props_df) for analysis.
+**Description:** The simulation is run `1000 (or 100)` times to generate a distribution of outcomes. Each iteration involves the sampling procedures described `whitby_covid_tracing.py` before line `66`, and the results are aggregated into a DataFrame (props_df) for analysis.
 
 ## Comparison of Results with Whitby’s Blog Post
 After running the original script `(whitby_covid_tracing.py)`, we can compare its histograms to those in Andrew Whitby’s blog post.
