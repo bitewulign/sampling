@@ -12,7 +12,6 @@ Alter the code so that it is reproducible. Describe the changes you made to the 
 
 # Author: Bitewulign Mekonnen
 
-```
 ## Analysis of Sampling in the Model
 The given Python script simulates a contact-tracing model for COVID-19 infections at two types of events: weddings and brunches. The process involves multiple stages of sampling, each influencing the final proportions of infections and traced cases. Below, I describe each stage:
 
@@ -27,6 +26,7 @@ Function used:
 infected_indices = np.random.choice(ppl.index, size=int(len(ppl) * ATTACK_RATE), replace=False)
 ppl.loc[infected_indices, 'infected'] = True
 ```
+
 Sampling procedure: A subset of the population is randomly selected as infected based on an attack rate (10%).
 Sample size: 10% of 1,000 = 100 individuals.
 Sampling frame: The full population of 1,000 attendees.
@@ -34,10 +34,9 @@ Underlying distribution: Uniform random sampling without replacement.
 Relevance to blog post: Reflects how infections occur at events and how randomly they spread.
 3. Primary Contact Tracing Sampling
 Function used:
-python
-Copy
-Edit
+```python
 ppl.loc[ppl['infected'], 'traced'] = np.random.rand(sum(ppl['infected'])) < TRACE_SUCCESS
+```
 Sampling procedure: Among infected individuals, a subset is randomly marked as "traced" with a probability of 20%.
 Sample size: Approximately 20% of 100 = 20 individuals.
 Sampling frame: The already infected individuals.
@@ -45,20 +44,18 @@ Underlying distribution: Bernoulli distribution (success probability = 0.2).
 Relevance to blog post: Demonstrates that tracing does not detect all infections, only a random subset.
 4. Secondary Contact Tracing Sampling
 Function used:
-python
-Copy
-Edit
+```python
 event_trace_counts = ppl[ppl['traced'] == True]['event'].value_counts()
 events_traced = event_trace_counts[event_trace_counts >= SECONDARY_TRACE_THRESHOLD].index
 ppl.loc[ppl['event'].isin(events_traced) & ppl['infected'], 'traced'] = True
+```
 Sampling procedure: If at least two traced individuals were at a given event, all infected people at that event are also traced.
 Sample size: Varies depending on how many traced individuals attended the same event.
 Sampling frame: The set of infected individuals at events with at least 2 traced cases.
 Underlying distribution: Conditional probability (depends on the previous step).
 Relevance to blog post: This step introduces bias because events with more attendees are more likely to have secondary tracing, even if they weren’t the original source.
-Comparison of Results with Whitby’s Blog Post
+## Comparison of Results with Whitby’s Blog Post
 After running the original script (whitby_covid_tracing.py), we can compare its histograms to those in Andrew Whitby’s blog post.
-
 The histograms generated should show that traced cases disproportionately come from weddings, even though infections are more evenly distributed.
 If the output closely matches Whitby’s, then the code correctly reproduces the biases described in his blog.
 If there are differences, potential reasons could be:
@@ -68,8 +65,7 @@ Minor changes in implementation compared to Whitby’s original model.
 Effect of Reducing Repetitions to 100
 Reducing the number of repetitions from 1,000 to 100 and running the script multiple times shows variability in results.
 
-Observations:
-
+##  Observations:
 With 100 repetitions, histograms fluctuate more across runs, showing inconsistent distributions.
 The variability arises because the sample size is too small to approximate the true distribution.
 Some runs might overestimate or underestimate the proportion of traced infections coming from weddings due to randomness.
@@ -80,39 +76,33 @@ To make the simulation fully reproducible, we need to set a random seed before a
 Changes to the Code:
 Set the random seed at the start of the script
 
-python
-Copy
-Edit
+```python
 np.random.seed(42)
+```
 This ensures all np.random functions produce the same values across different runs.
-
 Modify simulate_event to accept a seed
 
-python
-Copy
-Edit
+```python
 def simulate_event(m, seed=42):
     np.random.seed(seed + m)  # Unique seed per iteration
+```
 This ensures variability across runs while keeping them reproducible.
 
 Update the simulation loop
 
-python
-Copy
-Edit
+```python
 results = [simulate_event(m, seed=42) for m in range(1000)]
+```
 Now, even if the script is run multiple times, the results remain identical.
 
-Effects of These Changes:
+### Effects of These Changes:
 Running the script multiple times produces the same histograms.
 The simulation maintains internal variation across repetitions but is consistent across different executions.
 The biases and distributions observed in Whitby’s blog post should remain the same each time the script is executed.
-Conclusion
+### Conclusion
 The script includes multiple stages of sampling, affecting infection rates and biases.
 Reducing repetitions to 100 increases result variability.
 Adding a random seed ensures reproducibility, making results identical across multiple runs.
-
-```
 
 
 ## Criteria
