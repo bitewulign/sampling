@@ -47,49 +47,50 @@ The number of your chosen topic: `#1 (Employee turnover rate in a large tech com
 
 
 **Describe your target population, sampling frame, sampling units, and observational units:**
-> **Target population:** All current employees in entry- and lower-level positions at the company.
 
-> **Sampling frame:** A list of all employees in entry- and lower-level roles, obtained from the HR database.
+**Target population:** All current employees in entry- and lower-level positions at the company.
 
-> **Sampling units:** Individual employees in entry- and lower-level positions.
+**Sampling frame:** A list of all employees in entry- and lower-level roles, obtained from the HR database.
 
-> **Sampling strategy:** Stratified random sampling to ensure representation across departments and roles.
+**Sampling units:** Individual employees in entry- and lower-level positions.
+
+**Sampling strategy:** Stratified random sampling to ensure representation across departments and roles.
 
 **Your 5-10 question survey:**
 
-> 1. How satisfied are you with your current role at the company? 
+1. How satisfied are you with your current role at the company? 
     1. Extremely Dissatisfied
     2. Unsatisfied
     3. Neutral
     4. Satisfied
     5. Extremely Satisfied
 
-> 2. How likely are you to leave the company within the next year? (Very Likely / Likely / Neutral / Unlikely / Very Unlikely)
+2. How likely are you to leave the company within the next year? (Very Likely / Likely / Neutral / Unlikely / Very Unlikely)
     1. Extremely Unlikely
     2. Unlikely
     3. Neutral
     4. Likely
     5. Extremely Likely
 
-> 3. What is the primary reason you would consider leaving the company?
+3. What is the primary reason you would consider leaving the company?
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-> 4. What changes would you suggest to improve job satisfaction at the company? 
+4. What changes would you suggest to improve job satisfaction at the company? 
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-> 5. Do you feel valued and recognized for your contributions at work?
+5. Do you feel valued and recognized for your contributions at work?
     1. Yes
     2. No
     3. Sometimes
 
-> 6. How would you describe your relationship with your direct supervisor? (Excellent / Good / Neutral / Poor / Very Poor)
+6. How would you describe your relationship with your direct supervisor? (Excellent / Good / Neutral / Poor / Very Poor)
     1. Exteremly poor
     2. Poor
     3. Neutral
     4. Good
     5. Exteremly good
 
-> 7. Would you recommend this company as a good place to work to others?
+7. Would you recommend this company as a good place to work to others?
     1. Not sure
     2. No
     3. Yes
