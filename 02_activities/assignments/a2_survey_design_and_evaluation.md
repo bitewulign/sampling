@@ -73,10 +73,14 @@ The number of your chosen topic: `#1 (Employee turnover rate in a large tech com
     5. Extremely Likely
 
 3. What is the primary reason you would consider leaving the company?
-______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
 
 4. What changes would you suggest to improve job satisfaction at the company? 
-______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________________
 
 5. Do you feel valued and recognized for your contributions at work?
     1. Yes
@@ -99,9 +103,28 @@ ________________________________________________________________________________
 
 Identify and describe survey features:
 
-```
-write your answer here
-```
+**1. Sample type:** The survey uses a stratified random sample to ensure representation across different demographic groups and regions in Canada.
+
+**2. Sample size:** Approximately 20,000 respondents aged 15 and older.
+
+**3. Target population:** Canadian residents aged 15 and older, excluding those living in institutions or on reserves.
+
+**4. Sampling frame:** The Labour Force Survey (LFS) sampling frame, which covers about 98% of the Canadian population.
+
+**5. Survey mode(s):** The survey was conducted using computer-assisted telephone interviews (CATI) and, in some cases, in-person interviews.
+
+**6. Timeline:** Data collection occurred between January and December 2018.
+
+**7. Response rate:** The response rate was approximately 55%.
+
+**8. Weights:** Weights were applied to adjust for non-response and to ensure the sample was representative of the Canadian population.
+
+**9. Data processing:** Data cleaning included removing incomplete or inconsistent responses, and imputation was used to handle missing data.
+
+**11. Sources of error:** Potential sources of error include non-response bias, recall bias, and sampling error.
+
+**12. Limitations, known biases, etc:** The survey may underrepresent certain groups, such as those without access to telephones or those who are less likely to participate in surveys. Additionally, self-reported data may be subject to social desirability bias.
+**13. Link to documentation and any additional sources used:**
 
 ## Rubric
 
