@@ -34,12 +34,9 @@ def simulate_event(m):
   """
   # Create DataFrame for people at events with initial infection and traced status
   events = ['wedding'] * 200 + ['brunch'] * 800
-  ppl = pd.DataFrame({
-      'event': events,
-      'infected': False,
-      'traced': np.nan  # Initially setting traced status as NaN
-  })
-
+  ppl = pd.DataFrame({'event': events, 'infected': False, 'traced': np.nan  # Initially setting traced status as NaN
+})
+  
   # Explicitly set 'traced' column to nullable boolean type
   ppl['traced'] = ppl['traced'].astype(pd.BooleanDtype())
 
